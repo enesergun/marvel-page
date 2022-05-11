@@ -3,9 +3,12 @@ import {useState, useEffect} from 'react'
 import './App.css';
 
 import axios from 'axios'
+
 import Pagination from './components/Pagination';
 import Header from './components/Header'
 import CharactersCard from './components/CharactersCard'
+import SearchBar from "./components/SearchBar";
+import LanguagesButtons from './components/LanguagesButtons';
 
 // https://gateway.marvel.com/v1/public/characters?ts=1&apikey=89c5bb6f000ff89c6b3bfd1804a55184&hash=d8e15a485cc807f99e27672c604d81c5&limit=100&offset=0
 
@@ -75,10 +78,14 @@ console.log(list);
     <div className="main">
         <Header />
         
+        <div className='searchAndLang'> 
+        <SearchBar />
+          <LanguagesButtons />
+        </div>
 
         {/* CONTENT START */}
         
-        <div className="container">
+        <div className="container">          
           {
             loading 
             ? 
