@@ -15,7 +15,8 @@ function App() {
   const [offset, setOffset] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageCount, setPageCount] = useState(78)
-  const [total] = useState(78)
+  const [total] = useState(78);
+  const [loading, setLoading] = useState();
 
   
   useEffect(() => {
@@ -39,11 +40,13 @@ const setPage = (value) => {
 
 // request to marvel.api
   const getData = (currentPage) => {
+    setLoading(true);
     const characters = JSON.parse(localStorage.getItem(currentPage));
 
     if (characters) {
       setList(characters);
       setPageCount(1560 / 20);
+      setLoading(false);
       
       
     } else {
@@ -53,6 +56,7 @@ const setPage = (value) => {
       localStorage.setItem(currentPage, JSON.stringify(response.data.data.results));
       setList(response.data.data.results);
       setPageCount(response.data.data.total / 20);
+      setLoading(false);
 
   })
     .catch(function (error) {
@@ -75,12 +79,23 @@ console.log(list);
         {/* CONTENT START */}
         
         <div className="container">
-          {            
-            list.length > 0 &&
-            list.map((item, index) => (
-              <CharactersCard item={item} key={index} />
-              
-            )) 
+          {
+            loading 
+            ? 
+            (<div>
+              Yükleniyor...
+            </div>
+            )
+            : 
+            <>
+              {            
+                list.length > 0 &&
+                list.map((item, index) => (
+                  <CharactersCard item={item} key={index} />
+                  
+                )) 
+              }
+            </>
           }
 
         </div>
