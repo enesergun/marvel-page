@@ -124,6 +124,23 @@ body {
   margin-right: 10px;
 }
 
+.searchBar {  
+  display: flex;
+  flex-direction: column;
+}
+.searchBar label {    
+  position: relative;
+  bottom: 20px
+}
+
+.searchBar input {
+  width: 400px;
+  height: 43px;
+  background: transparent;
+  border: 1px solid white;  
+  color: white;
+}
+
 .langButton {
   height: 64px;
   width: 64px;
