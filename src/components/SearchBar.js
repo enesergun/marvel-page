@@ -39,8 +39,10 @@ const SearchBar = () => {
                 <div className='searchedChars'>
                   {
                     searchChar.map((char, key) => (
-                      <div className='searchedCharsName'>
-                        {t('characterName')} : {char.name}
+                      <div key={key}>
+                        <div className='searchedCharsName'>
+                          {t('characterName')} : {char.name}
+                        </div>
                       </div>
                     ))
                   }
