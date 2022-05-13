@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import Header from '../components/Header';
+import { Link } from 'react-router-dom';
 
 const CharacterDetail = () => {
     const [character, setCharacter] = useState([]);
@@ -26,11 +27,13 @@ const CharacterDetail = () => {
     return (
         <div className="CharacterDetail">
             <Header />
+            <Link to="/">Ana Sayfaya Dön</Link>
             {
                 character.length === 0 
                 ? <div>Yükleniyor...</div>
                 : <div>{character[0].name}</div>
             }
+            
         </div>
     )
 }

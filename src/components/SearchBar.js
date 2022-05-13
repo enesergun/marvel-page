@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
+import { Link } from 'react-router-dom';
+
 const SearchBar = () => {
   const [searchChar, setSearchChar]= useState([]);
   const [characterName, setCharacterName]= useState('');
@@ -41,7 +43,7 @@ const SearchBar = () => {
                     searchChar.map((char, key) => (
                       <div key={key}>
                         <div className='searchedCharsName'>
-                          {t('characterName')} : {char.name}
+                          <Link to={`character/${char.id}`}>{t('characterName')} : {char.name}</Link>
                         </div>
                       </div>
                     ))
