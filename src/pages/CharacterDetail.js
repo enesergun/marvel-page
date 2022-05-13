@@ -17,7 +17,6 @@ const CharacterDetail = () => {
     }, [])
     
 
-
     const getCharacter = () => {    
         axios
             .get(`https://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=89c5bb6f000ff89c6b3bfd1804a55184&hash=d8e15a485cc807f99e27672c604d81c5`)
@@ -26,8 +25,7 @@ const CharacterDetail = () => {
             });
     }
 
-    console.log(character);
-
+    
     return (
         <div className="CharacterDetail">
             <Header />

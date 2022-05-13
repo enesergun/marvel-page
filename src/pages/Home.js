@@ -21,11 +21,12 @@ function Home() {
   
     
     useEffect(() => {
-      getData(currentPage);
+      getData();
     }, [currentPage])
   
   
   const setPage = (value) => {
+
     if (value.type === "next" && currentPage < total) {
       setCurrentPage((x) => x + 1);
       setOffset(offset + 20);
@@ -40,7 +41,7 @@ function Home() {
   };
   
   // request to marvel.api
-    const getData = (currentPage) => {
+    const getData = () => {
       setLoading(true);
       const characters = JSON.parse(localStorage.getItem(currentPage));
   
@@ -51,7 +52,7 @@ function Home() {
         
         
       } else {
-        axios.get(`https://gateway.marvel.com/v1/public/characters?ts=1&apikey=89c5bb6f000ff89c6b3bfd1804a55184&hash=d8e15a485cc807f99e27672c604d81c5&offset=${offset}`)
+        axios.get(`https://gateway.marvel.com/v1/public/characters?ts=1&apikey=89c5bb6f000ff89c6b3bfd1804a55184&hash=d8e15a485cc807f99e27672c604d81c5&offset=${(currentPage - 1) * 20}`)
       .then(function (response) {
         // handle success
         localStorage.setItem(currentPage, JSON.stringify(response.data.data.results));
@@ -70,6 +71,7 @@ function Home() {
     }
   }
   
+  console.log(currentPage);
   
     return (
       

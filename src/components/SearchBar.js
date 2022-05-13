@@ -24,9 +24,7 @@ const SearchBar = () => {
         
       }
     }
-
-    console.log(searchChar);
-    
+        
     return (
      <>
         <div className="searchBar">
