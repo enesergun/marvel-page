@@ -192,6 +192,10 @@ a:visited {
   align-self: center;
   font-size: 30px;
 }
+.charDescription {
+  font-size: 15px;
+  padding: 10px;
+}
 
 .character {
   max-width: 900px;
@@ -212,6 +216,18 @@ a:visited {
 
 .dataHeader {
   margin:  10px 0;
+}
+.charDetailButton {
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.charDetailButton a {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 

@@ -43,7 +43,11 @@ const CharacterDetail = () => {
                     <div className="character">
                        <div className="charHeader">                           
                             <img className='characterImage' src={`${character[0].thumbnail.path}/landscape_incredible.${character[0].thumbnail.extension}`} alt="" />
-                            <span className='charName'>{character[0].name}</span>
+                            <span className='charName'>
+                                {character[0].name}
+                                <div className='charDescription'>{character[0].description}</div>
+                            </span>
+                            
                        </div>
                        <div className="charContainer">
                            <div className="dataHeader">                                   
@@ -58,6 +62,9 @@ const CharacterDetail = () => {
                            <div className="dataHeader">
                                 <CharacterDataInformation characterInfo={character[0]} type={'events'} notExist={'noEvents'}/>                              
                            </div>
+                       </div>
+                       <div className='charDetailButton'>
+                        <a href={character[0].urls[0].url} target="_blank" rel='noreferrer'>{t('details')}</a>
                        </div>
                     </div>
                 )
