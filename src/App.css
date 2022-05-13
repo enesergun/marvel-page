@@ -140,7 +140,22 @@ body {
   border: 1px solid white;  
   color: white;
 }
+.searchedChars {
+  background: rgba(67, 67, 67, 1);
+  padding: 10px 19px;
+  font-size: 15px;
+  max-height: 150px;
+  overflow: auto;
+}
+.searchedCharsName {
+  padding: 10px 5px;
+  border-radius: 10px;
 
+}
+
+.searchedCharsName:hover {
+  background: rgba(34, 34, 34, 1);
+}
 .langButton {
   height: 64px;
   width: 64px;

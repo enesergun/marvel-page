@@ -1,21 +1,57 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
 const SearchBar = () => {
+  const [searchChar, setSearchChar]= useState([]);
+  const [characterName, setCharacterName]= useState('');
+
 /* https://gateway.marvel.com/v1/public/characters?ts=1&apikey=89c5bb6f000ff89c6b3bfd1804a55184&hash=d8e15a485cc807f99e27672c604d81c5&nameStartsWith= */
     const { t } = useTranslation();
 
     const handleChar = (charName) => {
-        console.log(charName.target.value);
+      setCharacterName(charName);
+            
+      if (charName.length >= 1) {
+        axios
+          .get("https://gateway.marvel.com/v1/public/characters?ts=1&apikey=89c5bb6f000ff89c6b3bfd1804a55184&hash=d8e15a485cc807f99e27672c604d81c5&nameStartsWith=" + charName)
+          .then((response) => {
+            setSearchChar(response.data.data.results);
+          });
+        
+      }
     }
 
-  return (
-    <div className="searchBar">
-        <label htmlFor="">{t('searchCharacter')}</label>
-        <input type="text" name="characterSearch" id="" placeholder={t('searchCharacterName')} onChange={handleChar}/>
-    </div>
-  )
+    console.log(searchChar);
+    
+    return (
+     <>
+        <div className="searchBar">
+          <label htmlFor="">{t('searchCharacter')}</label>
+          <input type="text" name="characterSearch" id="" placeholder={t('searchCharacterName')} onChange={(e) => handleChar(e.target.value)} autoComplete='off'/>
+          {
+            characterName.length > 0 && 
+            <>
+              {
+                searchChar.length > 0 
+                ? 
+                <div className='searchedChars'>
+                  {
+                    searchChar.map((char, key) => (
+                      <div className='searchedCharsName'>
+                        {t('characterName')} : {char.name}
+                      </div>
+                    ))
+                  }
+                </div>  
+                : <div className='searchedChars'>{t('notfound')}</div>
+              }
+            </>
+          }
+        </div>
+     </>
+    )
 }
 
 export default SearchBar

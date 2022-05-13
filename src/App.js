@@ -71,7 +71,7 @@ const setPage = (value) => {
   });
   }
 }
-console.log(list);
+
 
   return (
     
