@@ -7,5 +7,11 @@
     "goBack": "Go to main page",
     "noInfo": "No description available.",
     "comics": "Comics",
-    "noComics": "No comics available."
+    "stories": "Stories",
+    "series": "Series",
+    "events": "Events",
+    "noComics": "No comics available.",
+    "noStories": "No comics available.",    
+    "noSeries": "No series available.",
+    "noEvents": "No events available."
   }

@@ -137,8 +137,7 @@ body {
   width: 400px;
   height: 43px;
   background: transparent;
-  border: 1px solid white;  
-  color: white;
+  border: 1px solid white;    
 }
 .searchedChars {
   background: rgba(67, 67, 67, 1);
@@ -151,6 +150,15 @@ body {
   padding: 10px 5px;
   border-radius: 10px;
 
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
 }
 
 .searchedCharsName:hover {
@@ -167,6 +175,43 @@ body {
 
 .langButtonsActive {
   background: rgba(237, 237, 237, 1);
+}
+
+.charHeader{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+.characterImage {
+  border-radius: 10px;
+}
+.charName {
+  width: 100%;
+  text-align: center;
+  align-self: center;
+  font-size: 30px;
+}
+
+.character {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.underline {
+  display: block;
+  height: 0.1px;
+  width: 20%;
+  background: white;
+}
+.DataList {
+  margin: 20px 0;
+}
+.DataList div {
+  margin: 10px 0;
+}
+
+.dataHeader {
+  margin:  10px 0;
 }
 
 

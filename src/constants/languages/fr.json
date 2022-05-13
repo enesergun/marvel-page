@@ -7,5 +7,11 @@
     "goBack": "Aller à la page principale",
     "noInfo": "Pas de description disponible.",
     "comics": "Des bandes dessinées",
-    "noComics": "Aucune bande dessinée disponible."
+    "stories": "Histoires",
+    "series": "Séries",
+    "events": "Evénements",
+    "noComics": "Aucune bande dessinée disponible.",
+    "noStories": "Aucune histoire disponible.",    
+    "noSeries": "Aucune série disponible.",
+    "noEvents": "Aucun événement disponible."
   }

@@ -7,5 +7,11 @@
     "goBack": "Anasayfaya dön",
     "noInfo": "Açıklama bulunmuyor.",
     "comics": "Çizgi Romanlar",
-    "noComics": "Çizgi Roman bulunamadı."
+    "stories": "Hikayeler",
+    "series": "Diziler",
+    "events": "Etkinlikler",
+    "noComics": "Çizgi film bulunmuyor.",
+    "noStories": "Hikaye bulunmuyor.",    
+    "noSeries": "Dizi bulunmuyor.",
+    "noEvents": "Etkinlik bulunmuyor."
   }
